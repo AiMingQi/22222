@@ -20,11 +20,16 @@
 </template>
 
 <script>
+
   export default {
     name: 'QrGenerator',
 
     data: () => ({
    
     }),
+    created () {
+    },
+    methods: {
+    }
   }
 </script>
