@@ -1,15 +1,15 @@
 <template>
-  <hello-world />
+  <qr-generator />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import QrGenerator from '../components/QrGenerator.vue'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      QrGenerator,
     },
   }
 </script>
