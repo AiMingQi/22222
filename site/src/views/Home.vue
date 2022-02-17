@@ -3,7 +3,7 @@
   <v-layout fill-height>
     <v-row class="align-stretch text-center" height="100%">
       <v-col  cols="12" lg="4" md="12" sm="12">
-        <v-card id="purple" class="d-flex align-stretch pa-3 text-center" height="100%">
+        <v-card id="purple" class="d-flex align-stretch pa-5 text-center" height="100%">
           <v-img
           alt="Purple"
           class="shrink mx-auto"
@@ -35,15 +35,15 @@
                 <p class="text-h4 text--primary">
                   Peace
                 </p>
-                <p class="text-h5 text--primary">Peace Cannot Be Kept By Force: It can only be achieved by understanding. - Albert Einstein</p>
-              </v-card-text>
                 <qr-reader tokenAddress="Purple - Member"></qr-reader>
+                <p class="text-h5 text--primary">Peace Cannot Be Kept By Force:<br> It can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
+              </v-card-text>
             </v-card>
           </v-expand-transition>
         </v-card>
       </v-col>
       <v-col  cols="12" lg="4" md="6" sm="12">
-        <v-card id="gold" class="d-flex align-stretch pa-3 text-center" height="100%">
+        <v-card id="gold" class="d-flex align-stretch pa-5 text-center" height="100%">
           <v-img
           alt="Gold"
           class="shrink mx-auto"
@@ -75,15 +75,15 @@
                 <p class="text-h4 text--primary">
                   Prosperity
                 </p>
-                <p class="text-h5 text--primary">Prosperity comes to those who hustle and push their dreams into existence. - Natasha Munson </p>
-              </v-card-text>
                 <qr-reader tokenAddress="Gold - Member"></qr-reader>
+                <p class="text-h5 text--primary">Prosperity comes to those who hustle<br> and push their dreams into existence. <br><br> - <strong>Natasha Munson</strong></p>
+              </v-card-text>
             </v-card>
           </v-expand-transition>
         </v-card>
       </v-col>
       <v-col  cols="12" lg="4" md="6" sm="12">
-        <v-card id="red" class="d-flex align-stretch pa-3 text-center" height="100%">
+        <v-card id="red" class="d-flex align-stretch pa-5 text-center" height="100%">
               <v-img
               alt="Red"
               class="shrink mx-auto"
@@ -115,8 +115,8 @@
                 <p class="text-h4 text--primary">
                   Love
                 </p>
-                <p class="text-h5 text--primary">I want to do with you what spring does with cherry trees. - Pablo Neruda</p>
                 <qr-reader tokenAddress="Red - Member"></qr-reader>
+                <p class="text-h5 text--primary">I want to do with you what spring<br> does with cherry trees. <br><br> - <strong>Pablo Neruda</strong></p>
               </v-card-text>
             </v-card>
           </v-expand-transition>
