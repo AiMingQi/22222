@@ -35,7 +35,9 @@
                 <p class="text-h4 text--primary">
                   Peace
                 </p>
-                <qr-reader tokenAddress="Purple - Member"></qr-reader>
+                <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress" target="_blank">
+                  <qr-reader :tokenAddress="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress"></qr-reader>
+                </a>
                 <p class="text-h5 text--primary">Peace Cannot Be Kept By Force:<br> It can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
               </v-card-text>
             </v-card>
@@ -75,8 +77,11 @@
                 <p class="text-h4 text--primary">
                   Prosperity
                 </p>
-                <qr-reader tokenAddress="Gold - Member"></qr-reader>
+                <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+goldOpenseaTokenAddress" target="_blank">
+                  <qr-reader :tokenAddress="goldOpenseaTokenAddress"></qr-reader>
+                </a>
                 <p class="text-h5 text--primary">Prosperity comes to those who hustle<br> and push their dreams into existence. <br><br> - <strong>Natasha Munson</strong></p>
+
               </v-card-text>
             </v-card>
           </v-expand-transition>
@@ -115,12 +120,13 @@
                 <p class="text-h4 text--primary">
                   Love
                 </p>
-                <qr-reader tokenAddress="Red - Member"></qr-reader>
+                <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+redOpenseaTokenAddress" target="_blank">
+                  <qr-reader :tokenAddress="redOpenseaTokenAddress"></qr-reader>
+                </a>
                 <p class="text-h5 text--primary">I want to do with you what spring<br> does with cherry trees. <br><br> - <strong>Pablo Neruda</strong></p>
               </v-card-text>
             </v-card>
           </v-expand-transition>
-      
         </v-card>
       </v-col>
     </v-row>
@@ -141,9 +147,15 @@ import QrReader from "../components/QrGenerator.vue"
       revealGold: false,
       revealPurple: false,
       revealRed: false,
+      contractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963',
+      goldOpenseaTokenAddress: '67201874612487930781359947374147540542883839083498399740011074558494592991234',
+      purpleOpenseaTokenAddress: '67201874612487930781359947374147540542883839083498399740011074559594104619018',
+      redOpenseaTokenAddress: '67201874612487930781359947374147540542883839083498399740011074560693616246794',
     }),
   }
 </script>
+
+
 
 <style scoped>
 

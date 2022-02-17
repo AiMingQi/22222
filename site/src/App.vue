@@ -7,7 +7,11 @@
     >
       <div class="d-flex align-center">
       
-      <v-btn to="/">
+      <v-btn 
+      plain
+      block
+      to="/"
+      >
         <v-img
           alt="Home Button - NFTW Logo"
           class="shrink mr-2"
@@ -15,13 +19,15 @@
           :src="require('./assets/NFTW-white-sq.svg')"
           transition="scale-transition"
           width="40"
-        />
+                  />
         </v-btn>
+      </div>
+      <h2 class="ml-3">22222.World</h2>
+      <v-spacer></v-spacer>
       
       <v-btn to="/qr-reader" class="ml-3 mx-auto">
         VIP Card Reader
         </v-btn>
-      </div>
 
       <v-spacer></v-spacer>
 
@@ -38,6 +44,11 @@
     <v-main>
       <router-view/>
     </v-main>
+    <v-footer app color="black"  dark>
+      <p>@ 2022 NFTW</p>
+      <v-spacer></v-spacer>
+      <p>Main Contract: {{currentContractAddress}}</p>
+    </v-footer>
   </v-app>
 </template>
 
@@ -47,6 +58,7 @@ export default {
   name: 'App',
 
   data: () => ({
+    currentContractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963'
     //
   }),
 };
