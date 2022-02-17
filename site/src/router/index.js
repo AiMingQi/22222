@@ -41,6 +41,30 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "QrReader" */ '../views/QrReader.vue')
+  },
+  {
+    path: '/purple',
+    name: 'PurplePage',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "PurplePage" */ '../views/club/PurplePage.vue')
+  },
+  {
+    path: '/gold',
+    name: 'GoldPage',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "GoldPageGoldPage" */ '../views/club/GoldPage.vue')
+  },
+  {
+    path: '/red',
+    name: 'RedPage',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "RedPage" */ '../views/club/RedPage.vue')
   }
 ]
 
