@@ -6,15 +6,20 @@
       dark
     >
       <div class="d-flex align-center">
+      
       <v-btn to="/">
         <v-img
-          alt="NFTW Logo"
+          alt="Home Button - NFTW Logo"
           class="shrink mr-2"
           contain
           :src="require('./assets/NFTW-white-sq.svg')"
           transition="scale-transition"
           width="40"
         />
+        </v-btn>
+      
+      <v-btn to="/qr-reader" class="ml-3 mx-auto">
+        VIP Card Reader
         </v-btn>
       </div>
 
