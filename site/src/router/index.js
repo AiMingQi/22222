@@ -25,6 +25,22 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "OpenseaCollection" */ '../views/OpenseaCollection.vue')
+  },
+  {
+    path: '/validator',
+    name: 'Validator',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "Validator" */ '../views/Validator.vue')
+  },
+  {
+    path: '/qr-reader',
+    name: 'QrReader',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "QrReader" */ '../views/QrReader.vue')
   }
 ]
 

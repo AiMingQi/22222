@@ -3,6 +3,10 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import vuetify from './plugins/vuetify'
+import VueQrcodeReader from "vue-qrcode-reader";
+
+Vue.use(VueQrcodeReader);
+
 
 Vue.config.productionTip = false
 
