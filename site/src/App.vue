@@ -6,6 +6,7 @@
       dark
     >
       <div class="d-flex align-center">
+      <v-btn to="/">
         <v-img
           alt="NFTW Logo"
           class="shrink mr-2"
@@ -14,6 +15,7 @@
           transition="scale-transition"
           width="40"
         />
+        </v-btn>
       </div>
 
       <v-spacer></v-spacer>

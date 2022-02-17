@@ -1,35 +1,32 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/NFTW-Square-Logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
-      </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          QR Code Validator
-        </h1>
-      </v-col>      
-    </v-row>
-  </v-container>
+  <div>
+    <v-quagga :onDetected="logIt" :readerSize="readerSize" :readerTypes="['ean_reader']"></v-quagga>
+  </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import VueQuagga from 'vue-quaggajs';
 
-  export default {
-    name: 'QrGenerator',
+// register component 'v-quagga'
+Vue.use(VueQuagga);
 
-    data: () => ({
-   
-    }),
-    created () {
-    },
-    methods: {
+export default {
+  name: 'VueBarcodeTest',
+  data () {
+    return {
+      readerSize: {
+        width: 640,
+        height: 480
+      },
+      detecteds: []
     }
+  },
+  methods: {
+    logIt (data) {
+      console.log('detected', data)
+    }
+
   }
+}
 </script>
