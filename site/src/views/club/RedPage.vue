@@ -70,8 +70,6 @@ import QrReader from "@/components/QrGenerator.vue"
   }
 </script>
 
-
-
 <style scoped>
 
 #red {background: #c00000;}

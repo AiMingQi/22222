@@ -2,7 +2,11 @@
   <div>
     <p class="error">{{ error }}</p>
 
-    <p class="decode-result">Secret Code: <b>{{ result }}</b></p>
+    <p class="decode-result">Secret Code: <b>{{ result.contractAddress }}</b></p>
+    <p class="decode-result">Secret Code: <b>{{ result.tokenAddress }}</b></p>
+    <p class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></p>
+    <p class="decode-result">Secret Code: <b>{{ result.clubColor }}</b></p>
+    {{result}}
 
     <qrcode-stream @decode="onDecode" @init="onInit" />
   </div>
@@ -17,14 +21,19 @@ export default {
 
   data () {
     return {
-      result: '',
+      result: { 
+            contractAddress: "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
+            tokenAddress: "Nope",
+            secretPhrase: "Dance More",
+            clubColor: "Magic"
+        },
       error: ''
     }
   },
 
   methods: {
     onDecode (result) {
-      this.result = result
+      this.result = JSON.parse(result)
     },
 
     async onInit (promise) {
