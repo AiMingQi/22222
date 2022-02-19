@@ -1,15 +1,22 @@
 <template>
-  <div>
-    <p class="error">{{ error }}</p>
+<v-container fluid :class="result.clubColor">
+<v-row>
+    <v-col cols="12">
+        <v-card class="pa-5">
+            <p class="error">{{ error }}</p>
 
-    <p class="decode-result">Secret Code: <b>{{ result.contractAddress }}</b></p>
-    <p class="decode-result">Secret Code: <b>{{ result.tokenAddress }}</b></p>
-    <p class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></p>
-    <p class="decode-result">Secret Code: <b>{{ result.clubColor }}</b></p>
-    {{result}}
-
-    <qrcode-stream @decode="onDecode" @init="onInit" />
-  </div>
+                <qrcode-stream @decode="onDecode" @init="onInit" />
+                <v-card v-show="result.contractAddress" dark class="pa-5 mt-3">
+                    <h2 v-show="result.secretPhrase" class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></h2>
+                    <h3 v-show="result.clubColor !=='Undefined'" class="decode-result">Club Color: <b>{{ result.clubColor }}</b></h3>
+                    <br>
+                    <p v-show="result.contractAddress" class="decode-result">Contract Address: <b>{{ result.contractAddress }}</b></p>
+                    <p v-show="result.tokenAddress" class="decode-result">Token Address: <b>{{ result.tokenAddress }}</b></p>
+                </v-card>
+            </v-card> 
+        </v-col>
+    </v-row>
+</v-container>
 </template>
 
 <script>
@@ -22,10 +29,10 @@ export default {
   data () {
     return {
       result: { 
-            contractAddress: "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
-            tokenAddress: "Nope",
-            secretPhrase: "Dance More",
-            clubColor: "Magic"
+            contractAddress: "",
+            tokenAddress: "",
+            secretPhrase: "",
+            clubColor: "Undefined"
         },
       error: ''
     }
@@ -68,4 +75,10 @@ export default {
   font-weight: bold;
   color: red;
 }
+.Red {background: #c00000;}
+.Gold {background: gold;}
+.Purple {background: purple;}
+.Black {background: black;}
+.Undefined {background: green;}
+
 </style>
