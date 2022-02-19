@@ -1,0 +1,26 @@
+[
+    {
+        "contractAddress": "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
+        "tokenAddress": "106728893711997430351499537110311918968148144763278714921562000174585569345539",
+        "secretPhrase": "Eirene",
+        "clubColor": "Purple"
+    },
+    {
+        "contractAddress": "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
+        "tokenAddress": "106728893711997430351499537110311918968148144763278714921562000173486057717763",
+        "secretPhrase": "Plutus",
+        "clubColor": "Gold"
+    },
+    {
+        "contractAddress": "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
+        "tokenAddress": "106728893711997430351499537110311918968148144763278714921562000172386546089998",
+        "secretPhrase": "Aphrodite",
+        "clubColor": "Red"
+    },
+    {
+        "contractAddress": "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
+        "tokenAddress": "106728893711997430351499537110311918968148144763278714921562000175685080973314",
+        "secretPhrase": "Loki",
+        "clubColor": "Black"
+    }
+]

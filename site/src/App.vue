@@ -61,5 +61,6 @@ export default {
     currentContractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963'
     //
   }),
+  methods: {}
 };
 </script>
