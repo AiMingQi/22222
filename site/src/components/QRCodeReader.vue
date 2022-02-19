@@ -1,6 +1,6 @@
 <template>
 <v-container fluid :class="result.clubColor">
-<v-row>
+<v-row class="pa-12">
     <v-col cols="12">
         <v-card class="pa-5">
             <p class="error">{{ error }}</p>
