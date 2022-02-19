@@ -35,6 +35,9 @@
                 <p class="text-h4 text--primary">
                   Peace
                 </p>
+                <v-btn color="purple" dark :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress" target="_blank">
+                Visit Opensea to Purchase
+                </v-btn>
                 <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress" target="_blank">
                   <qr-reader :tokenAddress="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress"></qr-reader>
                 </a>
@@ -77,6 +80,9 @@
                 <p class="text-h4 text--primary">
                   Prosperity
                 </p>
+                <v-btn color="yellow" :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+goldOpenseaTokenAddress" target="_blank">
+                Visit Opensea to Purchase
+                </v-btn>
                 <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+goldOpenseaTokenAddress" target="_blank">
                   <qr-reader :tokenAddress="goldOpenseaTokenAddress"></qr-reader>
                 </a>
@@ -120,6 +126,9 @@
                 <p class="text-h4 text--primary">
                   Love
                 </p>
+                <v-btn color="#c00000" :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+redOpenseaTokenAddress" target="_blank" dark>
+                Visit Opensea to Purchase
+                </v-btn>
                 <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+redOpenseaTokenAddress" target="_blank">
                   <qr-reader :tokenAddress="redOpenseaTokenAddress"></qr-reader>
                 </a>
