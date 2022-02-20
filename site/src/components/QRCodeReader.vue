@@ -2,6 +2,9 @@
 <v-container fluid :class="result.clubColor">
 <v-row class="pa-8">
     <v-col cols="12" lg="6" sm="12">
+    <v-card class="mb-3">
+    <connect-wallet></connect-wallet>
+    </v-card>
         <v-card class="pa-5 mx-auto" max-width="600px">
             <p class="error">{{ error }}</p>
 
@@ -46,11 +49,12 @@
 <script>
 import { QrcodeStream} from 'vue-qrcode-reader'
 import QrGenerator from "../components/QrGenerator.vue"
+import ConnectWallet from '../components/ConnectWallet.vue'
 import axios from 'axios'
 
 export default {
 
-  components: { QrcodeStream, QrGenerator },
+  components: { QrcodeStream, QrGenerator, ConnectWallet },
 
   data () {
     return {

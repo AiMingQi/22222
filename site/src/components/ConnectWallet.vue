@@ -5,7 +5,8 @@
                 <v-card class="pa-2"> 
                     <h2>Connect to Wallet that Contains 22222.World NFTs</h2>
                     <v-btn @click="getWallet" dark block>Connect To Wallet</v-btn>
-                    {{accounts}}
+                   <v-card-text> Ethereum Account: {{accounts}}
+                   </v-card-text> 
                 </v-card> 
             </v-col>
         </v-row>
@@ -45,7 +46,7 @@ import { OpenSeaPort, Network } from 'opensea-js'
             console.log(accountAddress)
             
             console.log("connected to web3", web3)
-            const provider = new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/67340a6b8f2e4d1685a1cb0af80f861a')
+            const provider = new Web3.providers.HttpProvider('https://mainnet.infura.io/')
             
             const seaport = new OpenSeaPort(provider, {
                 networkName: Network.Main,
