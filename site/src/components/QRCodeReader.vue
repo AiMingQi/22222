@@ -1,20 +1,40 @@
 <template>
 <v-container fluid :class="result.clubColor">
-<v-row class="pa-12">
+<v-row class="pa-8">
     <v-col cols="12">
         <v-card class="pa-5">
             <p class="error">{{ error }}</p>
 
                 <qrcode-stream @decode="onDecode" @init="onInit" />
-                <v-card v-show="result.contractAddress" dark class="pa-5 mt-3">
-                    <h2 v-show="result.secretPhrase" class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></h2>
-                    <h3 v-show="result.clubColor !=='Undefined'" class="decode-result">Club Color: <b>{{ result.clubColor }}</b></h3>
+                <v-card v-show="haveScan" dark class="pa-5 mt-3">
+                    <h2 v-show="haveScan" class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></h2>
+                    <h3 v-show="haveScan" class="decode-result">Club Color: <b>{{ result.clubColor }}</b></h3>
                     <br>
-                    <qr-generator :tokenAddress="'mycolorado://share?Destination=1545&ControlCode=12345&Message=22222.World Verified Member'"></qr-generator>
-                    <p v-show="result.contractAddress" class="decode-result">Contract Address: <b>{{ result.contractAddress }}</b></p>
-                    <p v-show="result.tokenAddress" class="decode-result">Token Address: <b>{{ result.tokenAddress }}</b></p>
+                    <p v-show="haveScan" class="decode-result">Contract Address: <b>{{ result.contractAddress }}</b></p>
+                    <p v-show="haveScan" class="decode-result">Token Address: <b>{{ result.tokenAddress }}</b></p>
                 </v-card>
-            </v-card> 
+
+                <v-card v-show="haveScan" dark class="pa-5 mt-3">
+                    <h2 class="text-center">myColoradoID Validation</h2>
+
+                    <v-img
+          alt="Home Button - NFTW Logo"
+          class="mx-auto"
+          contain
+          :src="require('../assets/Flag_of_Colorado.svg.png')"
+          transition="scale-transition"
+          width="400"
+                  />
+                    <qr-generator v-show="!haveMyColoradoVerification" :tokenAddress="myColoradoBase"></qr-generator>
+                    <v-btn v-show="!haveMyColoradoVerification" @click="checkColoradID" block x-large color="green">Check ID</v-btn>
+                    <v-card class="pa-2 mt-2" light v-show="haveMyColoradoVerification">
+                        <h2 class="decode-result">Name: <b>{{ myColoradResult.FirstName }} {{ myColoradResult.LastName }}</b></h2>
+                        <h3 class="decode-result">Over 21: <b>{{ myColoradResult.Over21 }}</b></h3>
+                        <h3 class="decode-result">Message: <b>{{ myColoradResult.Message }}</b></h3>
+                    </v-card>
+                </v-card>
+        
+        </v-card> 
             
         </v-col>
     </v-row>
@@ -24,6 +44,7 @@
 <script>
 import { QrcodeStream} from 'vue-qrcode-reader'
 import QrGenerator from "../components/QrGenerator.vue"
+import axios from 'axios'
 
 export default {
 
@@ -31,19 +52,42 @@ export default {
 
   data () {
     return {
+        haveScan: false,
+        haveMyColoradoVerification: false,
       result: { 
             contractAddress: "",
             tokenAddress: "",
             secretPhrase: "",
-            clubColor: "Undefined"
+            clubColor: ""
         },
-      error: ''
+      error: '',
+      myColoradoBase: 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member',
+      myColoradResult: {
+          FirstName: 'Erick',
+          LastName: 'Crumb',
+          Over21: true,
+          ControlCode: '22222World',
+          Message: '22222.World Verified Member',
+          merchant_id: 22222
+      }
+
     }
   },
 
   methods: {
     onDecode (result) {
-      this.result = JSON.parse(result)
+      this.result = JSON.parse(result);
+      console.log(this.myColoradoBase)
+      this.haveScan = true;
+      this.getMyColoradoStatus ();
+    },
+    checkColoradID () {
+        this.haveMyColoradoVerification = true;
+    },
+    async getMyColoradoStatus () {
+        axios
+            .get('https://myColorad.com')
+            .then(response => (this.info = response))
     },
 
     async onInit (promise) {
@@ -69,7 +113,9 @@ export default {
         }
       }
     }
-  }
+  },
+
+
 }
 </script>
 
