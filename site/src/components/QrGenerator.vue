@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="text-center">
       <v-col class="mb-4">
-        <v-img id="canvas" :src="url" max-width="420px" class="mx-auto"></v-img>        
+        <v-img id="canvas" :src="url" max-width="300px" class="mx-auto"></v-img>        
       </v-col>      
     </v-row>
   </v-container>

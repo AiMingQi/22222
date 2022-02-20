@@ -1,11 +1,12 @@
 <template>
 <v-container fluid :class="result.clubColor">
 <v-row class="pa-8">
-    <v-col cols="12">
-        <v-card class="pa-5">
+    <v-col cols="12" lg="6" sm="12">
+        <v-card class="pa-5 mx-auto" max-width="600px">
             <p class="error">{{ error }}</p>
 
-                <qrcode-stream @decode="onDecode" @init="onInit" />
+            <qrcode-stream @decode="onDecode" @init="onInit" />
+        </v-card> 
                 <v-card v-show="haveScan" dark class="pa-5 mt-3">
                     <h2 v-show="haveScan" class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></h2>
                     <h3 v-show="haveScan" class="decode-result">Club Color: <b>{{ result.clubColor }}</b></h3>
@@ -13,8 +14,9 @@
                     <p v-show="haveScan" class="subtitle-2">Contract Address: <b>{{ result.contractAddress }}</b></p>
                     <p v-show="haveScan" class="subtitle-2">Token Address: <b>{{ result.tokenAddress }}</b></p>
                 </v-card>
-
-                <v-card v-show="haveScan" dark class="pa-5 mt-3">
+    </v-col>
+    <v-col cols="12" lg="6" sm="12">
+                <v-card v-show="haveScan" dark class="pa-5 mx-auto" max-width="600px">
                     <h2 class="text-center">myColoradoID Validation</h2>
 
                     <qr-generator v-show="!haveMyColoradoVerification" :tokenAddress="myColoradoBase"></qr-generator>
@@ -35,7 +37,6 @@
                     </v-card>
                 </v-card>
         
-        </v-card> 
             
         </v-col>
     </v-row>
