@@ -10,10 +10,12 @@
                     <h2 v-show="result.secretPhrase" class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></h2>
                     <h3 v-show="result.clubColor !=='Undefined'" class="decode-result">Club Color: <b>{{ result.clubColor }}</b></h3>
                     <br>
+                    <qr-generator :tokenAddress="'mycolorado://share?Destination=1545&ControlCode=12345&Message=22222.World Verified Member'"></qr-generator>
                     <p v-show="result.contractAddress" class="decode-result">Contract Address: <b>{{ result.contractAddress }}</b></p>
                     <p v-show="result.tokenAddress" class="decode-result">Token Address: <b>{{ result.tokenAddress }}</b></p>
                 </v-card>
             </v-card> 
+            
         </v-col>
     </v-row>
 </v-container>
@@ -21,10 +23,11 @@
 
 <script>
 import { QrcodeStream} from 'vue-qrcode-reader'
+import QrGenerator from "../components/QrGenerator.vue"
 
 export default {
 
-  components: { QrcodeStream },
+  components: { QrcodeStream, QrGenerator },
 
   data () {
     return {
