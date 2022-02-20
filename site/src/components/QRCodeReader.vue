@@ -10,27 +10,28 @@
                     <h2 v-show="haveScan" class="decode-result">Secret Code: <b>{{ result.secretPhrase }}</b></h2>
                     <h3 v-show="haveScan" class="decode-result">Club Color: <b>{{ result.clubColor }}</b></h3>
                     <br>
-                    <p v-show="haveScan" class="decode-result">Contract Address: <b>{{ result.contractAddress }}</b></p>
-                    <p v-show="haveScan" class="decode-result">Token Address: <b>{{ result.tokenAddress }}</b></p>
+                    <p v-show="haveScan" class="subtitle-2">Contract Address: <b>{{ result.contractAddress }}</b></p>
+                    <p v-show="haveScan" class="subtitle-2">Token Address: <b>{{ result.tokenAddress }}</b></p>
                 </v-card>
 
                 <v-card v-show="haveScan" dark class="pa-5 mt-3">
                     <h2 class="text-center">myColoradoID Validation</h2>
 
-                    <v-img
-          alt="Home Button - NFTW Logo"
-          class="mx-auto"
-          contain
-          :src="require('../assets/Flag_of_Colorado.svg.png')"
-          transition="scale-transition"
-          width="400"
-                  />
                     <qr-generator v-show="!haveMyColoradoVerification" :tokenAddress="myColoradoBase"></qr-generator>
                     <v-btn v-show="!haveMyColoradoVerification" @click="checkColoradID" block x-large color="green">Check ID</v-btn>
                     <v-card class="pa-2 mt-2" light v-show="haveMyColoradoVerification">
-                        <h2 class="decode-result">Name: <b>{{ myColoradResult.FirstName }} {{ myColoradResult.LastName }}</b></h2>
-                        <h3 class="decode-result">Over 21: <b>{{ myColoradResult.Over21 }}</b></h3>
-                        <h3 class="decode-result">Message: <b>{{ myColoradResult.Message }}</b></h3>
+                        <v-img
+                            alt="Home Button - NFTW Logo"
+                            class="mx-auto"                            
+                            :src="require('../assets/Flag_of_Colorado.png')"
+                            transition="scale-transition"
+                            contain
+                                />
+                        <v-card-text>
+                            <h2 class="decode-result">Name: <b>{{ myColoradResult.FirstName }} {{ myColoradResult.LastName }}</b></h2>
+                            <h3 class="decode-result">Over 21: <b>{{ myColoradResult.Over21 }}</b></h3>
+                            <h3 class="decode-result">Message: <b>{{ myColoradResult.Message }}</b></h3>
+                        </v-card-text>
                     </v-card>
                 </v-card>
         
@@ -63,8 +64,8 @@ export default {
       error: '',
       myColoradoBase: 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member',
       myColoradResult: {
-          FirstName: 'Erick',
-          LastName: 'Crumb',
+          FirstName: 'Mitchell',
+          LastName: 'Valentine',
           Over21: true,
           ControlCode: '22222World',
           Message: '22222.World Verified Member',
