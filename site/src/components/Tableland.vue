@@ -2,10 +2,10 @@
     <v-container>
         <v-row>
             <v-col>
-                <v-card class="pa-2"> 
-                    <h2>Tableland</h2>
-                    <v-btn @click="tablelandConnect" dark block>Login to Tableland</v-btn>
-                </v-card> 
+                <v-card class="pa-2">
+                    <h2>22222</h2>
+                    <v-btn @click="tablelandConnect" dark block>Administer Tableland</v-btn>
+                </v-card>
             </v-col>
         </v-row>
     </v-container>
@@ -31,16 +31,21 @@ import { connect } from "@textile/tableland";
             console.log("vue",this.tbl)
 
         },
-        async createTable () {
-            
-            let id = await this.tbl.create(`CREATE TABLE mytable (name text, id int, primary key (id))`);
+        async createEventTable () {
+            let id = await this.tbl.create(`CREATE TABLE events (event text, name text, member_id int, time date, payload text, primary key (id))`);
             console.log("got ID",id)
-            let res = await this.tbl.query(`INSERT INTO ${id} (id, name) VALUES (0, 'Bobby Tables');`);
-            console.log("got Query", res)
-            res = await this.tbl.query(`SELECT * FROM ${id}`);
-            console.log(res)
+            //let res = await this.tbl.query(`INSERT INTO ${id} (id, name, time) VALUES (0, 'Bobby Tables', 1645363230811);`);
+            //console.log("got Query", res)
+            //res = await this.tbl.query(`SELECT * FROM ${id}`);
+            //console.log(res)
             const tables = await this.tbl.list();
             console.log("tables", tables)
+
+        },
+        async logEvent (int id) {
+          let time = new Date().toISOString().slice(0, 19).replace('T', ' ');
+          let res = await this.tbl.query(`INSERT INTO ${id} (event, name, member_id, time ) VALUES ("CHECK-IN", 'Bobby Tables', ${time});`);
+          console.log("got Query", res)
         }
     }
 
