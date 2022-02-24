@@ -42,7 +42,7 @@ import { connect } from "@textile/tableland";
             console.log("tables", tables)
 
         },
-        async logEvent (int id) {
+        async logEvent (int, id) {
           let time = new Date().toISOString().slice(0, 19).replace('T', ' ');
           let res = await this.tbl.query(`INSERT INTO ${id} (event, name, member_id, time ) VALUES ("CHECK-IN", 'Bobby Tables', ${time});`);
           console.log("got Query", res)
