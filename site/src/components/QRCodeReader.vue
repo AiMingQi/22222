@@ -3,7 +3,6 @@
 <v-row class="pa-8">
     <v-col cols="12" lg="6" sm="12">
     <v-card class="mb-3">
-    <connect-wallet></connect-wallet>
     </v-card>
         <v-card class="pa-5 mx-auto" max-width="600px">
             <p class="error">{{ error }}</p>
@@ -17,6 +16,9 @@
                     <p v-show="haveScan" class="subtitle-2">Contract Address: <b>{{ result.contractAddress }}</b></p>
                     <p v-show="haveScan" class="subtitle-2">Token Address: <b>{{ result.tokenAddress }}</b></p>
                 </v-card>
+    </v-col>
+    <v-col cols="12" lg="6" sm="12">
+    <connect-wallet></connect-wallet>
     </v-col>
     <v-col cols="12" lg="6" sm="12">
                 <v-card v-show="haveScan" dark class="pa-5 mx-auto" max-width="600px">
