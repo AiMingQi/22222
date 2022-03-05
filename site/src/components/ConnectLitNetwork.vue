@@ -27,6 +27,9 @@
         <v-btn @click="getLit" block dark>
           Get Lit
         </v-btn>
+        <v-btn @click="getAuthSig" block dark>
+          Get authSig
+        </v-btn>
         <v-btn @click="mintNft" block>
           Mint Token
         </v-btn>
@@ -101,6 +104,10 @@ import LitJsSdk from 'lit-js-sdk'
           extraData: ""
         }
       },
+      async getAuthSig () {
+        const authSig = await LitJsSdk.checkAndSignAuthMessage({chain: 'rinkeby'})
+        this.authSig = authSig
+      },
       async mintNft () {
           const {
           txHash,
@@ -131,16 +138,19 @@ import LitJsSdk from 'lit-js-sdk'
       },
       async requestJwt () {
         this.requestingStatus = 'Requesting JWT, please wait...'
-        this.jwt = await this.litNodeClient.getSignedToken({
+        const jwt = await this.litNodeClient.getSignedToken({
           accessControlConditions: this.accessControlConditions,
           chain: this.chain,
           authSig: this.authSig,
           resourceId: this.resourceId
         }) 
+        this.jwt = jwt
 
         this.requestingStatus = 'JWT obtained, please wait...' + this.jwt
       },
       async verifyJwt () {
+        // const data = await fetch('/verify?jwt=' + this.jwt).then(resp => resp.json())
+        // const { verified, header, payload } = LitJsSdk.verifyJwt({ jwt })
 
       }
     },
