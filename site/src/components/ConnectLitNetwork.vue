@@ -157,6 +157,7 @@ import LitJsSdk from 'lit-js-sdk'
         console.log(verified)
         console.log(header)
         console.log(payload)
+        this.$router.push('purple')
 
 
       }
