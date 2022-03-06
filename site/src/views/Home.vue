@@ -38,10 +38,17 @@
                 <v-btn color="purple" dark :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress" target="_blank">
                 Visit Opensea to Purchase
                 </v-btn>
+                
                 <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress" target="_blank">
                   <qr-reader :tokenAddress="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress"></qr-reader>
                 </a>
+                
                 <p class="text-h5 text--primary">Peace Cannot Be Kept By Force:<br> It can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
+                
+                <v-btn color="purple" x-large dark @click="enterPurple">
+                 Enter Purple
+                </v-btn>
+
               </v-card-text>
             </v-card>
           </v-expand-transition>
@@ -87,6 +94,10 @@
                   <qr-reader :tokenAddress="goldOpenseaTokenAddress"></qr-reader>
                 </a>
                 <p class="text-h5 text--primary">Prosperity comes to those who hustle<br> and push their dreams into existence. <br><br> - <strong>Natasha Munson</strong></p>
+                
+                <v-btn color="yellow" x-large dark @click="enterGold">
+                 Enter Gold
+                </v-btn>
 
               </v-card-text>
             </v-card>
@@ -133,6 +144,10 @@
                   <qr-reader :tokenAddress="redOpenseaTokenAddress"></qr-reader>
                 </a>
                 <p class="text-h5 text--primary">I want to do with you what spring<br> does with cherry trees. <br><br> - <strong>Pablo Neruda</strong></p>
+                
+                <v-btn color="#c00000" x-large dark @click="enterRed">
+                 Enter Red
+                </v-btn>
               </v-card-text>
             </v-card>
           </v-expand-transition>
@@ -161,6 +176,17 @@ import QrReader from "../components/QrGenerator.vue"
       purpleOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000174585569345539',
       redOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000172386546089998',
     }),
+    methods: {
+      enterPurple () {
+        console.log('enterPurple')
+      },
+      enterGold () {
+        console.log('enterGold')
+      },
+      enterRed () {
+        console.log('enterRed')
+      }
+    }
   }
 </script>
 
