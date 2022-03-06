@@ -116,6 +116,7 @@ import LitJsSdk from 'lit-js-sdk'
         console.log(verified)
         console.log(header)
         console.log(payload)
+        this.$store.state.verifiedJwt = jwt
         this.$router.push('purple')
 
 

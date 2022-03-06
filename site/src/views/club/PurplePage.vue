@@ -1,12 +1,12 @@
 <template>
   <v-container fluid style="height: 100%;">
-  <v-layout fill-height>
-    <v-row class="align-stretch text-center" height="100%">
+
+    <v-row class="text-center" height="100%" width="61.8%">
       <v-col  cols="12" sm="12">
-        <v-card id="purple" class="d-flex align-stretch pa-5 text-center" height="100%">
+        <v-card id="purple" class="pa-5 text-center" height="100%">
           <v-img
           alt="Purple"
-          class="shrink mx-auto"
+          class=" mx-auto"
           contain
           :src="require('@/assets/purple-sacred-white.svg')"
           transition="scale-transition"
@@ -17,8 +17,9 @@
         <v-expand-transition>
             <v-card
               v-if="revealPurple"
-              class="transition-fast-in-fast-out v-card--reveal"
+              class="transition-fast-in-fast-out v-card--reveal pa-3"
               style="height: 100%; width: 100%"
+              
             >
               <v-card-actions class="pt-0">
                 <v-btn
@@ -35,10 +36,20 @@
                 <p class="text-h4 text--primary">
                   Peace
                 </p>
-                <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress" target="_blank">
-                  <qr-reader :tokenAddress="purpleOpenseaTokenAddress"></qr-reader>
-                </a>
-                <p class="text-h5 text--primary">Peace Cannot Be Kept By Force:<br> It can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
+                <v-card dark class="pa-5 mx-auto" width="61%">
+                <h2>Scan QR Code using myColoradoID</h2>
+                <v-img
+                    alt="Home Button - NFTW Logo"
+                    class="mx-auto"                            
+                    :src="require('@/assets/myColorado.png')"
+                    transition="scale-transition"
+                    contain
+                    width="60%"
+                        />
+                </v-card>
+                  <qr-reader :tokenAddress="myColoradoBase"></qr-reader>
+                <p class="text-h5 text--primary">Peace cannot be kept by force; it can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
+                JWT: {{$store.state.verifiedJwt}}
 
               </v-card-text>
             </v-card>
@@ -47,7 +58,6 @@
       </v-col>
       
     </v-row>
-    </v-layout>
   </v-container>
 </template>
 
@@ -66,6 +76,7 @@ import QrReader from "@/components/QrGenerator.vue"
       revealRed: false,
       contractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963',
       purpleOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000174585569345539',
+      myColoradoBase: 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member',
     }),
   }
 </script>
