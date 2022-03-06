@@ -160,6 +160,7 @@
 
 <script>
 import QrReader from "../components/QrGenerator.vue"
+import LitJsSdk from 'lit-js-sdk'
 
   export default {
     name: 'Home',
@@ -175,8 +176,19 @@ import QrReader from "../components/QrGenerator.vue"
       goldOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000173486057717763',
       purpleOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000174585569345539',
       redOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000172386546089998',
+      listNodeClient: {},
     }),
+    created(){
+      // With promises
+        LitJsSdk.litJsSdkLoadedInALIT()
+        this.getLit()
+    },
     methods: {
+      async getLit () {
+        const client = new LitJsSdk.LitNodeClient()
+        await client.connect()
+        this.litNodeClient = client
+      },
       enterPurple () {
         console.log('enterPurple')
       },
