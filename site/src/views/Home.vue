@@ -197,7 +197,8 @@ import LitJsSdk from 'lit-js-sdk'
       },
       enterRed () {
         console.log('enterRed')
-      }
+      },
+      
     }
   }
 </script>

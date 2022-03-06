@@ -56,7 +56,7 @@ import LitJsSdk from 'lit-js-sdk'
     name: 'ConnectLitNetwork',
     data: () => ({
       txHash: 'no txHash',
-      chain: 'rinkeby',
+      chain: 'polygon',
       provisioningStatus: 'not provisioning',
       requestingStatus: 'not requesting',
       mintingAddress: 'no minting address',
@@ -82,13 +82,13 @@ import LitJsSdk from 'lit-js-sdk'
         this.litNodeClient = client
         this.accessControlConditions = [
           {
-            contractAddress: LitJsSdk.LIT_CHAINS[this.chain].contractAddress,
+            contractAddress: '0x7C7757a9675f06F3BE4618bB68732c4aB25D2e88',
             standardContractType: 'ERC1155',
-            chain: 'rinkeby',
+            chain: 'polygon',
             method: 'balanceOf',
             parameters: [
               ':userAddress',
-              this.tokenId.toString()
+              '75'
             ],
             returnValueTest: {
               comparator: '>',
@@ -98,14 +98,14 @@ import LitJsSdk from 'lit-js-sdk'
         ];
         this.resourceId = {
           baseUrl: 'localhost:8080/#/',
-          path: 'red', // this would normally be your url path, like "/webpage.html" for example
+          path: 'get-lit', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
           extraData: ""
         }
       },
       async getAuthSig () {
-        const authSig = await LitJsSdk.checkAndSignAuthMessage({chain: 'rinkeby'})
+        const authSig = await LitJsSdk.checkAndSignAuthMessage({chain: 'polygon'})
         this.authSig = authSig
       },
       async mintNft () {
@@ -125,7 +125,8 @@ import LitJsSdk from 'lit-js-sdk'
 
       async provisionAccess () {
         this.provisioningStatus = 'Provisioning, please wait...'
-        console.log(this.accessControlConditions)
+        console.log(this.accessControlConditions);
+        this.getAuthSig();
 
         await this.litNodeClient.saveSigningCondition({
           accessControlConditions: this.accessControlConditions,
@@ -144,13 +145,15 @@ import LitJsSdk from 'lit-js-sdk'
           authSig: this.authSig,
           resourceId: this.resourceId
         }) 
+        console.log(jwt)
         this.jwt = jwt
 
         this.requestingStatus = 'JWT obtained, please wait...' + this.jwt
       },
       async verifyJwt () {
         // const data = await fetch('/verify?jwt=' + this.jwt).then(resp => resp.json())
-        // const { verified, header, payload } = LitJsSdk.verifyJwt({ jwt })
+        const { verified, header, payload } = LitJsSdk.verifyJwt( this.jwt )
+        console.log(verified,header,payload)
 
       }
     },
