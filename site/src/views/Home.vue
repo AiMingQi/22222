@@ -44,10 +44,8 @@
                 </a>
                 
                 <p class="text-h5 text--primary">Peace cannot be kept by force; it can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
-                
-                <v-btn color="purple" x-large dark @click="enterPurple">
-                 Enter Purple
-                </v-btn>
+
+                <purple-lit></purple-lit>
 
               </v-card-text>
             </v-card>
@@ -160,13 +158,15 @@
 
 <script>
 import QrReader from "../components/QrGenerator.vue"
+import PurpleLit from "../components/purpleLit.vue"
 import LitJsSdk from 'lit-js-sdk'
 
   export default {
     name: 'Home',
 
     components: {
-      QrReader
+      QrReader,
+      PurpleLit
     },
     data: () => ({
       revealGold: false,
@@ -198,7 +198,7 @@ import LitJsSdk from 'lit-js-sdk'
       enterRed () {
         console.log('enterRed')
       },
-      
+
     }
   }
 </script>
