@@ -151,9 +151,13 @@ import LitJsSdk from 'lit-js-sdk'
         this.requestingStatus = 'JWT obtained, please wait...' + this.jwt
       },
       async verifyJwt () {
+        let jwt = this.jwt
         // const data = await fetch('/verify?jwt=' + this.jwt).then(resp => resp.json())
-        const { verified, header, payload } = LitJsSdk.verifyJwt( this.jwt )
-        console.log(verified,header,payload)
+        const { verified, header, payload } = LitJsSdk.verifyJwt( { jwt } )
+        console.log(verified)
+        console.log(header)
+        console.log(payload)
+
 
       }
     },
