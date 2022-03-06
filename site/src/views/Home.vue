@@ -43,7 +43,7 @@
                   <qr-reader :tokenAddress="'https://opensea.io/assets/matic/'+contractAddress+'/'+purpleOpenseaTokenAddress"></qr-reader>
                 </a>
                 
-                <p class="text-h5 text--primary">Peace Cannot Be Kept By Force:<br> It can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
+                <p class="text-h5 text--primary">Peace cannot be kept by force; it can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
                 
                 <v-btn color="purple" x-large dark @click="enterPurple">
                  Enter Purple
@@ -93,9 +93,9 @@
                 <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+goldOpenseaTokenAddress" target="_blank">
                   <qr-reader :tokenAddress="goldOpenseaTokenAddress"></qr-reader>
                 </a>
-                <p class="text-h5 text--primary">Prosperity comes to those who hustle<br> and push their dreams into existence. <br><br> - <strong>Natasha Munson</strong></p>
+                <p class="text-h5 text--primary">Prosperity comes to those who hustle and push their dreams into existence. <br><br> - <strong>Natasha Munson</strong></p>
                 
-                <v-btn color="yellow" x-large dark @click="enterGold">
+                <v-btn color="yellow" x-large @click="enterGold">
                  Enter Gold
                 </v-btn>
 
@@ -143,7 +143,7 @@
                 <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+redOpenseaTokenAddress" target="_blank">
                   <qr-reader :tokenAddress="redOpenseaTokenAddress"></qr-reader>
                 </a>
-                <p class="text-h5 text--primary">I want to do with you what spring<br> does with cherry trees. <br><br> - <strong>Pablo Neruda</strong></p>
+                <p class="text-h5 text--primary">I want to do with you what spring does with cherry trees. <br><br> - <strong>Pablo Neruda</strong></p>
                 
                 <v-btn color="#c00000" x-large dark @click="enterRed">
                  Enter Red
