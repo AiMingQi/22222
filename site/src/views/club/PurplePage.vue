@@ -49,8 +49,19 @@
                 </v-card>
                   <qr-reader :tokenAddress="myColoradoBase"></qr-reader>
                 <p class="text-h5 text--primary">Peace cannot be kept by force; it can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
+                {{myColoradoURL}}
+                <br>
                 JWT: {{$store.state.verifiedJwt}}
 
+                <v-btn
+                  text
+                  color="purple"
+                  @click="revealPurple = false"
+                  dark
+                  block
+                >
+                  Close
+                </v-btn>
               </v-card-text>
             </v-card>
           </v-expand-transition>
@@ -78,6 +89,11 @@ import QrReader from "@/components/QrGenerator.vue"
       purpleOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000174585569345539',
       myColoradoBase: 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member',
     }),
+    computed: {
+      myColoradoURL () {
+        return 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member'
+      }
+    }
   }
 </script>
 

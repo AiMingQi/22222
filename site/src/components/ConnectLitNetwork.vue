@@ -101,10 +101,11 @@ import LitJsSdk from 'lit-js-sdk'
         ];
         this.resourceId = {
           baseUrl: 'localhost:8080/#/',
-          path: 'get-lit', // this would normally be your url path, like "/webpage.html" for example
+          path: 'purple', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
-          extraData: ""
+          extraData: "purple-v3",
+          permanant: false
         }
       },
       async getAuthSig () {
@@ -164,7 +165,7 @@ import LitJsSdk from 'lit-js-sdk'
         console.log(verified)
         console.log(header)
         console.log(payload)
-        this.$router.push('purple')
+        this.$router.push(payload.path)
 
 
       }
