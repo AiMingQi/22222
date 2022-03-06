@@ -51,13 +51,13 @@ import LitJsSdk from 'lit-js-sdk'
         this.litNodeClient = client
         this.accessControlConditions = [
           {
-            contractAddress: '0x7C7757a9675f06F3BE4618bB68732c4aB25D2e88',
+            contractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963',
             standardContractType: 'ERC1155',
             chain: 'polygon',
             method: 'balanceOf',
             parameters: [
               ':userAddress',
-              '75'
+              '106728893711997430351499537110311918968148144763278714921562000174585569345539'
             ],
             returnValueTest: {
               comparator: '>',
@@ -66,11 +66,11 @@ import LitJsSdk from 'lit-js-sdk'
           }
         ];
         this.resourceId = {
-          baseUrl: 'localhost:8080/#/',
+          baseUrl: '22222.world/#/',
           path: 'purple', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
-          extraData: "purple-v3"
+          extraData: "purple-opensea-v1-world"
         }
       },
       async getAuthSig () {
