@@ -35,9 +35,8 @@
                 <p class="text-h4 text--primary">
                   Prosperity
                 </p>
-                <a :href="'https://opensea.io/assets/matic/'+contractAddress+'/'+goldOpenseaTokenAddress" target="_blank">
-                  <qr-reader :tokenAddress="goldOpenseaTokenAddress"></qr-reader>
-                </a>
+                <h2>Scan QR Code using Membership Validator</h2>
+                  <qr-reader :tokenAddress="validTicket"></qr-reader>
                 <p class="text-h5 text--primary">Prosperity comes to those who hustle<br> and push their dreams into existence. <br><br> - <strong>Natasha Munson</strong></p>
 
               </v-card-text>
@@ -62,11 +61,21 @@ import QrReader from "@/components/QrGenerator.vue"
     },
     data: () => ({
       revealGold: false,
-      revealPurple: false,
-      revealRed: false,
       contractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963',
       goldOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000173486057717763',
     }),
+    computed: {
+      validTicket () {
+        const validTicket = JSON.stringify({
+          contractAddress: "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
+          tokenAddress: "106728893711997430351499537110311918968148144763278714921562000173486057717763",
+          secretPhrase: "Plutus",
+          clubColor: "Gold",
+          verifiedJwt: this.$store.state.verifiedJwt
+        })
+        return validTicket
+      }
+    }
   }
 </script>
 

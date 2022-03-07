@@ -78,12 +78,8 @@ import QrReader from "@/components/QrGenerator.vue"
       revealRed: false,
       contractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963',
       purpleOpenseaTokenAddress: '106728893711997430351499537110311918968148144763278714921562000174585569345539',
-      myColoradoBase: 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member',
     }),
     computed: {
-      myColoradoURL () {
-        return 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member'
-      },
       validTicket () {
         const validTicket = JSON.stringify({
           contractAddress: "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
