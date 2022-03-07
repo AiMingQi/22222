@@ -25,8 +25,8 @@
       <h2 class="ml-3">22222.World</h2>
       <v-spacer></v-spacer>
       
-      <v-btn to="/qr-reader" class="ml-3 mx-auto">
-        VIP Card Reader
+      <v-btn to="/black" class="ml-3 mx-auto">
+        Membership Validator
         </v-btn>
 
       <v-spacer></v-spacer>
@@ -56,7 +56,7 @@
 
 export default {
   name: 'App',
-
+ 
   data: () => ({
     currentContractAddress: '0x2953399124f0cbb46d2cbacd8a89cf0599974963'
     //

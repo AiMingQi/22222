@@ -9,6 +9,7 @@ export default new Vuex.Store({
     purpleVerified: false,   
     goldVerified: false,   
     redVerified: false,   
+    blackVerified: false,   
   },
   mutations: {
   },

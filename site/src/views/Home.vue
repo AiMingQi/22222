@@ -150,6 +150,8 @@
       </v-col>
     </v-row>
     </v-layout>
+  <black-lit>
+  </black-lit>
   </v-container>
 </template>
 
@@ -158,6 +160,7 @@ import QrReader from "../components/QrGenerator.vue"
 import PurpleLit from "../components/purpleLit.vue"
 import GoldLit from "../components/goldLit.vue"
 import RedLit from "../components/redLit.vue"
+import BlackLit from "../components/blackLit.vue"
 import LitJsSdk from 'lit-js-sdk'
 
   export default {
@@ -167,7 +170,8 @@ import LitJsSdk from 'lit-js-sdk'
       QrReader,
       PurpleLit,
       GoldLit,
-      RedLit
+      RedLit,
+      BlackLit
     },
     data: () => ({
       revealGold: false,

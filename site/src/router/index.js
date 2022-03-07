@@ -73,6 +73,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "RedPage" */ '../views/club/RedPage.vue')
+  },
+  {
+    path: '/black',
+    name: 'BlackPage',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "BlackPage" */ '../views/club/BlackPage.vue')
   }
 ]
 

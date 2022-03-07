@@ -3,47 +3,8 @@
     <v-row class="text-center">
       <v-col class="mb-4">
       <v-card>
-        <h2>Get Lit</h2>    
-        {{txHash}}
-        <br>
-        {{chain}}
-        <br>
-        {{provisioningStatus}}
-        <br>
-        {{requestingStatus}}
-        <br>
-       TokenId: {{tokenId}}
-        <br>
-        Token Address: {{tokenAddress}}
-        <br>
-        authSig: {{authSig}}
-        <br>
-        ResourceId {{resourceId}}
-        <br>
-        Access Control {{accessControlConditions}}
-        <br>
-        JWT {{jwt}}
-        <br>
-        <v-btn @click="getLit" block dark>
-          Get Lit
-        </v-btn>
-        <v-btn @click="getAuthSig" block dark>
-          Get authSig
-        </v-btn>
-        <v-btn @click="mintNft" block>
-          Mint Token
-        </v-btn>
-        <v-btn @click="provisionAccess" block dark>
-          Provision Access
-        </v-btn>
-        <v-btn @click="requestJwt" block>
-          Request JWT
-        </v-btn>
-        <v-btn @click="verifyJwt" block dark>
-          Verify JWT
-        </v-btn>
-        <v-btn @click="findLits" block dark>
-         Find LITS
+        <v-btn @click="enterBlack" block color="black" dark>
+          Black Card Members Only
         </v-btn>
       </v-card>
       </v-col>      
@@ -79,6 +40,11 @@ import LitJsSdk from 'lit-js-sdk'
         this.getLit()
     },
     methods: {
+        async enterBlack () {
+            await this.getAuthSig();
+            await this.requestJwt();
+            await this.verifyJwt();
+        },
       async getLit () {
         const client = new LitJsSdk.LitNodeClient()
         await client.connect()
@@ -91,7 +57,7 @@ import LitJsSdk from 'lit-js-sdk'
             method: 'balanceOf',
             parameters: [
               ':userAddress',
-              '106728893711997430351499537110311918968148144763278714921562000174585569345539'
+              '106728893711997430351499537110311918968148144763278714921562000175685080973314'
             ],
             returnValueTest: {
               comparator: '>',
@@ -104,8 +70,7 @@ import LitJsSdk from 'lit-js-sdk'
           path: 'black', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
-          extraData: "black-opensea-v6-world",
-          permanant: false
+          extraData: "black-opensea-v6-world"
         }
       },
       async getAuthSig () {
@@ -131,20 +96,6 @@ import LitJsSdk from 'lit-js-sdk'
         this.mintingAddress = mintingAddress
       },
 
-      async provisionAccess () {
-        this.provisioningStatus = 'Provisioning, please wait...'
-        console.log(this.accessControlConditions);
-        this.getAuthSig();
-
-        await this.litNodeClient.saveSigningCondition({
-          accessControlConditions: this.accessControlConditions,
-          chain: this.chain,
-          authSig: this.authSig,
-          resourceId: this.resourceId
-        })
-
-        this.provisioningStatus = 'Provisioned!'
-      },
       async requestJwt () {
         this.requestingStatus = 'Requesting JWT, please wait...'
         const jwt = await this.litNodeClient.getSignedToken({
@@ -165,8 +116,9 @@ import LitJsSdk from 'lit-js-sdk'
         console.log(verified)
         console.log(header)
         console.log(payload)
+        this.$store.state.verifiedJwt = jwt
+        this.$store.state.blackVerified = true
         this.$router.push(payload.path)
-
 
       }
     },

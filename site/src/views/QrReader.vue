@@ -1,6 +1,7 @@
 <template>
-  <v-container>
-  <v-row width="100%">
+  <v-container >
+  <black-lit></black-lit>
+  <v-row width="100%" v-if="$store.state.blackVerified">
     <v-col cols="12">
     <v-card width="100%">
     </v-card>
@@ -12,12 +13,14 @@
 
 <script>
   import QrReader from '../components/QRCodeReader.vue'
+  import BlackLit from '../components/blackLit.vue'
 
   export default {
     name: 'Home',
 
     components: {
       QrReader,
+      BlackLit
     },
   }
 </script>
