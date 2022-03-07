@@ -66,7 +66,7 @@ import LitJsSdk from 'lit-js-sdk'
           }
         ];
         this.resourceId = {
-          baseUrl: 'localhost:8080/#/',
+          baseUrl: '22222.world/#/',
           path: 'black', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
