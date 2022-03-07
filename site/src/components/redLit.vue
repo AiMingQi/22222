@@ -3,8 +3,8 @@
     <v-row class="text-center">
       <v-col class="mb-4">
       <v-card>
-        <v-btn @click="enterPurple" block color="purple" x-large dark>
-          Enter Purple
+        <v-btn @click="enterPurple" block color="#c00000" x-large dark>
+          Enter Red
         </v-btn>
       </v-card>
       </v-col>      
@@ -57,7 +57,7 @@ import LitJsSdk from 'lit-js-sdk'
             method: 'balanceOf',
             parameters: [
               ':userAddress',
-              '106728893711997430351499537110311918968148144763278714921562000174585569345539'
+              '106728893711997430351499537110311918968148144763278714921562000172386546089998'
             ],
             returnValueTest: {
               comparator: '>',
@@ -67,10 +67,10 @@ import LitJsSdk from 'lit-js-sdk'
         ];
         this.resourceId = {
           baseUrl: 'localhost:8080/#/',
-          path: 'purple', // this would normally be your url path, like "/webpage.html" for example
+          path: 'red', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
-          extraData: "purple-opensea-v1-world"
+          extraData: "red-opensea-v2-world"
         }
       },
       async getAuthSig () {

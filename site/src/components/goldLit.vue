@@ -3,8 +3,8 @@
     <v-row class="text-center">
       <v-col class="mb-4">
       <v-card>
-        <v-btn @click="enterPurple" block color="purple" x-large dark>
-          Enter Purple
+        <v-btn @click="enterPurple" block color="yellow" x-large>
+          Enter Gold
         </v-btn>
       </v-card>
       </v-col>      
@@ -57,7 +57,7 @@ import LitJsSdk from 'lit-js-sdk'
             method: 'balanceOf',
             parameters: [
               ':userAddress',
-              '106728893711997430351499537110311918968148144763278714921562000174585569345539'
+              '106728893711997430351499537110311918968148144763278714921562000173486057717763'
             ],
             returnValueTest: {
               comparator: '>',

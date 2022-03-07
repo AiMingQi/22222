@@ -49,7 +49,7 @@
                 </v-card>
                   <qr-reader :tokenAddress="myColoradoBase"></qr-reader>
                 <p class="text-h5 text--primary">Peace cannot be kept by force; it can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
-                {{myColoradoURL}}
+                <v-btn :src="myColoradoURL" dark>Visit myColorado App</v-btn>
                 <br>
                 JWT: {{$store.state.verifiedJwt}}
 

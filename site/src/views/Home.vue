@@ -92,10 +92,8 @@
                   <qr-reader :tokenAddress="goldOpenseaTokenAddress"></qr-reader>
                 </a>
                 <p class="text-h5 text--primary">Prosperity comes to those who hustle and push their dreams into existence. <br><br> - <strong>Natasha Munson</strong></p>
+                <gold-lit></gold-lit>
                 
-                <v-btn color="yellow" x-large @click="enterGold">
-                 Enter Gold
-                </v-btn>
 
               </v-card-text>
             </v-card>
@@ -143,9 +141,8 @@
                 </a>
                 <p class="text-h5 text--primary">I want to do with you what spring does with cherry trees. <br><br> - <strong>Pablo Neruda</strong></p>
                 
-                <v-btn color="#c00000" x-large dark @click="enterRed">
-                 Enter Red
-                </v-btn>
+                <red-lit></red-lit>
+              
               </v-card-text>
             </v-card>
           </v-expand-transition>
@@ -159,6 +156,8 @@
 <script>
 import QrReader from "../components/QrGenerator.vue"
 import PurpleLit from "../components/purpleLit.vue"
+import GoldLit from "../components/goldLit.vue"
+import RedLit from "../components/redLit.vue"
 import LitJsSdk from 'lit-js-sdk'
 
   export default {
@@ -166,7 +165,9 @@ import LitJsSdk from 'lit-js-sdk'
 
     components: {
       QrReader,
-      PurpleLit
+      PurpleLit,
+      GoldLit,
+      RedLit
     },
     data: () => ({
       revealGold: false,
