@@ -91,7 +91,7 @@ import LitJsSdk from 'lit-js-sdk'
             method: 'balanceOf',
             parameters: [
               ':userAddress',
-              '106728893711997430351499537110311918968148144763278714921562000173486057717763'
+              '106728893711997430351499537110311918968148144763278714921562000174585569345539'
             ],
             returnValueTest: {
               comparator: '>',
@@ -101,10 +101,10 @@ import LitJsSdk from 'lit-js-sdk'
         ];
         this.resourceId = {
           baseUrl: '22222.world/#/',
-          path: 'gold', // this would normally be your url path, like "/webpage.html" for example
+          path: 'purple', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
-          extraData: "gold-opensea-v2-world",
+          extraData: "purple-opensea-v2-world",
           permanant: false
         }
       },
