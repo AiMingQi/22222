@@ -36,23 +36,9 @@
                 <p class="text-h4 text--primary">
                   Peace
                 </p>
-                <v-card dark class="pa-5 mx-auto" width="61%">
-                <h2>Scan QR Code using myColoradoID</h2>
-                <v-img
-                    alt="Home Button - NFTW Logo"
-                    class="mx-auto"                            
-                    :src="require('@/assets/myColorado.png')"
-                    transition="scale-transition"
-                    contain
-                    width="60%"
-                        />
-                </v-card>
-                  <qr-reader :tokenAddress="myColoradoBase"></qr-reader>
-                <br>
-                Or <br>
-                <br>
-                <v-btn :href="myColoradoBase" x-large color="#c00000" dark>Open myColorado App</v-btn>
-                <br>
+                <h2>Scan QR Code using Membership Validator</h2>
+                  <qr-reader :tokenAddress="validTicket"></qr-reader>
+             
                 <br>
                 <p class="text-h5 text--primary">Peace cannot be kept by force; it can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
                 <br>
@@ -97,6 +83,16 @@ import QrReader from "@/components/QrGenerator.vue"
     computed: {
       myColoradoURL () {
         return 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member'
+      },
+      validTicket () {
+        const validTicket = JSON.stringify({
+          contractAddress: "0x2953399124f0cbb46d2cbacd8a89cf0599974963",
+          tokenAddress: "106728893711997430351499537110311918968148144763278714921562000174585569345539",
+          secretPhrase: "Eirene",
+          clubColor: "Purple",
+          verifiedJwt: this.$store.state.verifiedJwt
+        })
+        return validTicket
       }
     }
   }

@@ -25,7 +25,7 @@
       <h2 class="ml-3">22222.World</h2>
       <v-spacer></v-spacer>
       
-      <v-btn to="/black" class="ml-3 mx-auto">
+      <v-btn to="/qr-reader" class="ml-3 mx-auto">
         Membership Validator
         </v-btn>
 

@@ -1,7 +1,7 @@
 <template>
   <v-container >
   <black-lit></black-lit>
-  <v-row width="100%" v-if="$store.state.blackVerified">
+  <v-row width="100%">
     <v-col cols="12">
     <v-card width="100%">
     </v-card>

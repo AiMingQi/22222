@@ -15,11 +15,11 @@
                     <br>
                     <p v-show="haveScan" class="subtitle-2">Contract Address: <b>{{ result.contractAddress }}</b></p>
                     <p v-show="haveScan" class="subtitle-2">Token Address: <b>{{ result.tokenAddress }}</b></p>
+                    <p v-show="haveScan" class="subtitle-2">verified JWT: <b>{{ result.verifiedJwt }}</b></p>
+                    <p v-show="haveScan" class="subtitle-2">Valid JWT: <b>{{ validJWT }}</b></p>
                 </v-card>
     </v-col>
-    <v-col cols="12" lg="6" sm="12">
-    <connect-wallet></connect-wallet>
-    </v-col>
+ 
     <v-col cols="12" lg="6" sm="12">
                 <v-card v-show="haveScan" dark class="pa-5 mx-auto" max-width="600px">
                     <h2 class="text-center">myColoradoID Validation</h2>
@@ -51,22 +51,24 @@
 <script>
 import { QrcodeStream} from 'vue-qrcode-reader'
 import QrGenerator from "../components/QrGenerator.vue"
-import ConnectWallet from '../components/ConnectWallet.vue'
 import axios from 'axios'
+import LitJsSdk from 'lit-js-sdk'
 
 export default {
 
-  components: { QrcodeStream, QrGenerator, ConnectWallet },
+  components: { QrcodeStream, QrGenerator },
 
   data () {
     return {
+      validJWT: false,
         haveScan: false,
         haveMyColoradoVerification: false,
       result: { 
             contractAddress: "",
             tokenAddress: "",
             secretPhrase: "",
-            clubColor: ""
+            clubColor: "",
+            verifiedJwt: ""
         },
       error: '',
       myColoradoBase: 'mycolorado://share?Destination=1545&ControlCode22222World&Message=22222.World Verified Member',
@@ -87,6 +89,7 @@ export default {
       this.result = JSON.parse(result);
       console.log(this.myColoradoBase)
       this.haveScan = true;
+      this.verifyJwt();
       this.getMyColoradoStatus ();
     },
     checkColoradID () {
@@ -120,7 +123,16 @@ export default {
           this.error = `ERROR: Camera error (${error.name})`;
         }
       }
-    }
+    },
+    async verifyJwt () {
+        let jwt = this.result.verifiedJwt
+        // const data = await fetch('/verify?jwt=' + this.jwt).then(resp => resp.json())
+        const { verified, header, payload } = LitJsSdk.verifyJwt( { jwt } )
+        console.log(verified)
+        console.log(header)
+        console.log(payload)
+        this.validJWT = true
+      }
   },
 
 
