@@ -66,11 +66,11 @@ import LitJsSdk from 'lit-js-sdk'
           }
         ];
         this.resourceId = {
-          baseUrl: 'localhost:8080/#/',
-          path: 'purple', // this would normally be your url path, like "/webpage.html" for example
+          baseUrl: '22222.world/#/',
+          path: 'gold', // this would normally be your url path, like "/webpage.html" for example
           orgId: "",
           role: "",
-          extraData: "purple-opensea-v1-world"
+          extraData: "gold-opensea-v2-world"
         }
       },
       async getAuthSig () {
