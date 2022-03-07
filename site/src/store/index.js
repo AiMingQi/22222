@@ -5,7 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    verifiedJwt: 'none'
+    verifiedJwt: '', 
+    purpleVerified: false,   
+    goldVerified: false,   
+    redVerified: false,   
   },
   mutations: {
   },

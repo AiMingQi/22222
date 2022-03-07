@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid style="height: 100%;">
+  <v-container fluid style="height: 100%;" v-if="$store.state.redVerified">
   <v-layout fill-height>
     <v-row class="align-stretch text-center" height="100%">
       <v-col  cols="12" sm="12">

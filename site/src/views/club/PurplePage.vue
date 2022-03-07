@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid style="height: 100%;">
+  <v-container fluid style="height: 100%;" v-if="$store.state.purpleVerified">
 
     <v-row class="text-center" height="100%" width="61.8%">
       <v-col  cols="12" sm="12">
@@ -48,8 +48,13 @@
                         />
                 </v-card>
                   <qr-reader :tokenAddress="myColoradoBase"></qr-reader>
+                <br>
+                Or <br>
+                <br>
+                <v-btn :href="myColoradoBase" x-large color="#c00000" dark>Open myColorado App</v-btn>
+                <br>
+                <br>
                 <p class="text-h5 text--primary">Peace cannot be kept by force; it can only be achieved by understanding. <br><br> - <strong>Albert Einstein</strong></p>
-                <v-btn :src="myColoradoURL" dark>Visit myColorado App</v-btn>
                 <br>
                 JWT: {{$store.state.verifiedJwt}}
 
