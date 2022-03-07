@@ -16,7 +16,7 @@
                     <p v-show="haveScan" class="subtitle-2">Contract Address: <b>{{ result.contractAddress }}</b></p>
                     <p v-show="haveScan" class="subtitle-2">Token Address: <b>{{ result.tokenAddress }}</b></p>
                     <p v-show="haveScan" class="subtitle-2">verified JWT: <b>{{ result.verifiedJwt }}</b></p>
-                    <p v-show="haveScan" class="subtitle-2">Valid JWT: <b>{{ validJWT }}</b></p>
+                    <p v-show="haveScan" class="yellow--text subtitle-2">Valid JWT: <b>{{ validJWT }}</b></p>
                 </v-card>
     </v-col>
  
