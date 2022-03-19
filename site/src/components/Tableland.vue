@@ -5,6 +5,8 @@
                 <v-card class="pa-2">
                     <h2>22222</h2>
                     <v-btn @click="tablelandConnect" dark block>Administer Tableland</v-btn>
+                    <br>
+                    <v-btn @click="createEventTable" dark block>Create Table</v-btn>
                 </v-card>
             </v-col>
         </v-row>
@@ -13,33 +15,33 @@
 
 
 <script>
-import { connect } from "@textile/tableland";
+import { connect } from "@tableland/sdk";
 
   export default {
     name: 'Tableland',
     data () {
         return {
-            tbl: {}
+            connection: {}
         }
     },
 
     methods: {
         async tablelandConnect () {
-            const tbl = await connect({ network: "testnet" });
-            console.log("connected",tbl)
-            this.table = tbl
-            console.log("vue",this.tbl)
+            const connection = await connect({
+            network: "testnet",
+            host: "http://testnet.tableland.network",
+            });
+            console.log(connection)
+            this.connection = connection
 
         },
         async createEventTable () {
-            let id = await this.tbl.create(`CREATE TABLE events (event text, name text, member_id int, time date, payload text, primary key (id))`);
-            console.log("got ID",id)
-            //let res = await this.tbl.query(`INSERT INTO ${id} (id, name, time) VALUES (0, 'Bobby Tables', 1645363230811);`);
-            //console.log("got Query", res)
-            //res = await this.tbl.query(`SELECT * FROM ${id}`);
-            //console.log(res)
-            const tables = await this.tbl.list();
-            console.log("tables", tables)
+           const { name, id } = await this.connection.create(
+            "CREATE TABLE table (name text, id int, primary key (id));"
+            );
+
+            console.log(name)
+            console.log(id)
 
         },
         async logEvent (int, id) {

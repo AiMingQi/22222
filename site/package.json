@@ -10,6 +10,7 @@
   "dependencies": {
     "@rarible/connector": "^0.8.30",
     "@rarible/sdk": "^0.8.34",
+    "@tableland/sdk": "^0.0.1",
     "@textile/tableland": "^0.0.8-dev7",
     "@walletconnect/web3-provider": "^1.7.1",
     "core-js": "^3.6.5",
