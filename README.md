@@ -51,7 +51,7 @@ https://tableland.xyz
 https://www.pinata.cloud/
 
 #### Opensea
-https://opensea.io/
+https://opensea.io/22222World
 
 #### VueJS
 https://vuejs.org/
