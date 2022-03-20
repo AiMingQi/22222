@@ -1,6 +1,7 @@
-# 22222
+# 22222.World
 22222.World
 
+## An NFTW Project
 
 22222.World is an 'exclusive club' of members. To be in our club your must own a valid 22222.World NFT. And you have to be down with ColoradoJam!
 
