@@ -2,12 +2,35 @@
 ## ETHDenver 2022 Virtual Hackathon Submission
 ## An NFTW Project
 
+https://22222.World
+
+
 ### ColoradoJam - Tableland - Lit Protocol - IPFS - Opensea - Polygon - Ethereum
 
 View Project Demo Video
 https://youtu.be/Mv558ps6sLI?t=725
 
-## Current Site IPFS CID: QmcKFtvJNy5XfbMoKaWnoKTrywaqWpcJaMmk1inA2U6ZaG
+## Current Site IPFS CID: 
+QmcKFtvJNy5XfbMoKaWnoKTrywaqWpcJaMmk1inA2U6ZaG
+
+## Opensea Tokens
+
+### Purple
+https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/106728893711997430351499537110311918968148144763278714921562000174585569345539
+
+### Gold
+https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/106728893711997430351499537110311918968148144763278714921562000173486057717763
+
+### Red
+https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/106728893711997430351499537110311918968148144763278714921562000172386546089998
+
+## Related Projects
+### Real World Implementation
+https://420Pro.World
+
+### Our Design Studio
+https://NewFronTierWorks.com
+https://NFTW.life
 
 22222.World is an 'exclusive club' of members. To be in our club your must own a valid 22222.World NFT. And you have to be down with ColoradoJam!
 
