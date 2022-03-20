@@ -1,4 +1,4 @@
-# 22222.World
+# 22222.World - ETHDenver 2022 Virtual Hackathon Submission
 22222.World
 
 ## An NFTW Project
