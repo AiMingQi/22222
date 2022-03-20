@@ -1,7 +1,10 @@
-# 22222.World - ETHDenver 2022 Virtual Hackathon Submission
-22222.World
-
+# Welcome to 22222.World
+## ETHDenver 2022 Virtual Hackathon Submission
 ## An NFTW Project
+
+### ColoradoJam - Tableland - Lit Protocol - IPFS 
+
+## Current Site IPFS CID: QmcKFtvJNy5XfbMoKaWnoKTrywaqWpcJaMmk1inA2U6ZaG
 
 22222.World is an 'exclusive club' of members. To be in our club your must own a valid 22222.World NFT. And you have to be down with ColoradoJam!
 
