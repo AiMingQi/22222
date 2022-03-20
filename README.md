@@ -4,6 +4,10 @@
 
 https://22222.World
 
+https://dorahacks.io/buidl/2241
+
+https://www.ethdenver.com/
+
 
 ### ColoradoJam - Tableland - Lit Protocol - IPFS - Opensea - Polygon - Ethereum
 
@@ -31,6 +35,27 @@ https://420Pro.World
 ### Our Design Studio
 https://NewFronTierWorks.com
 https://NFTW.life
+
+### Technology Used
+
+#### myColorado
+https://mycolorado.state.co.us/
+
+#### Lit Protocol
+https://litprotocol.com/
+
+#### Tableland
+https://tableland.xyz
+
+#### Pinata Cloud
+https://www.pinata.cloud/
+
+#### Opensea
+https://opensea.io/
+
+#### VueJS
+https://vuejs.org/
+
 
 22222.World is an 'exclusive club' of members. To be in our club your must own a valid 22222.World NFT. And you have to be down with ColoradoJam!
 

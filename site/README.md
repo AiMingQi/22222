@@ -4,6 +4,10 @@
 
 https://22222.World
 
+https://dorahacks.io/buidl/2241
+
+https://www.ethdenver.com/
+
 
 ### ColoradoJam - Tableland - Lit Protocol - IPFS - Opensea - Polygon - Ethereum
 
@@ -31,6 +35,26 @@ https://420Pro.World
 ### Our Design Studio
 https://NewFronTierWorks.com
 https://NFTW.life
+
+### Technology Used
+
+#### myColorado
+https://mycolorado.state.co.us/
+
+#### Lit Protocol
+https://litprotocol.com/
+
+#### Tableland
+https://tableland.xyz
+
+#### Pinata Cloud
+https://www.pinata.cloud/
+
+#### Opensea
+https://opensea.io/
+
+#### VueJS
+https://vuejs.org/
 
 
 
