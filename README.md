@@ -2,7 +2,10 @@
 ## ETHDenver 2022 Virtual Hackathon Submission
 ## An NFTW Project
 
-### ColoradoJam - Tableland - Lit Protocol - IPFS 
+### ColoradoJam - Tableland - Lit Protocol - IPFS - Opensea - Polygon - Ethereum
+
+View Project Demo Video
+https://youtu.be/Mv558ps6sLI?t=725
 
 ## Current Site IPFS CID: QmcKFtvJNy5XfbMoKaWnoKTrywaqWpcJaMmk1inA2U6ZaG
 
