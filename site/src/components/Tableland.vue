@@ -7,6 +7,10 @@
                     <v-btn @click="tablelandConnect" dark block>Administer Tableland</v-btn>
                     <br>
                     <v-btn @click="createEventTable" dark block>Create Table</v-btn>
+                    <br>
+                    <v-btn @click="logEvent" dark block>Log Event</v-btn>
+                    <br>
+                    <v-btn @click="queryTable" dark block>Query Table</v-btn>
                 </v-card>
             </v-col>
         </v-row>
@@ -21,7 +25,8 @@ import { connect } from "@tableland/sdk";
     name: 'Tableland',
     data () {
         return {
-            connection: {}
+            connection: {},
+            name: ''
         }
     },
 
@@ -29,26 +34,39 @@ import { connect } from "@tableland/sdk";
         async tablelandConnect () {
             const connection = await connect({
             network: "testnet",
-            host: "http://testnet.tableland.network",
+            host: "https://testnet.tableland.network",
             });
             console.log(connection)
             this.connection = connection
 
         },
         async createEventTable () {
-           const { name, id } = await this.connection.create(
-            "CREATE TABLE table (name text, id int, primary key (id));"
+           const { name } = await this.connection.create(
+            "CREATE TABLE events (name text, id int, time text, primary key (id));"
             );
 
             console.log(name)
-            console.log(id)
+            this.name = name
 
         },
-        async logEvent (int, id) {
+        async logEvent () {
           let time = new Date().toISOString().slice(0, 19).replace('T', ' ');
-          let res = await this.tbl.query(`INSERT INTO ${id} (event, name, member_id, time ) VALUES ("CHECK-IN", 'Bobby Tables', ${time});`);
+          console.log(`test`)
+          console.log(`INSERT INTO ${this.name} (name, id, time) VALUES ('CHECK-IN', '1', '${time}');`)
+          let res = await this.connection.query(`INSERT INTO ${this.name} (name, id, time) VALUES ('CHECK-IN', '1', '${time}');`);
           console.log("got Query", res)
+        },
+        async insertRecord () {
+            const one = await tbl.query(
+            `INSERT INTO ${createRes.name} (id, name) VALUES (0, 'Bobby Tables');`
+            );
+
+        },
+        async queryTable () {
+            const { data: { rows, columns }} = await connection.query(`SELECT * FROM ${this.name};`);
         }
+
+       
     }
 
   }
